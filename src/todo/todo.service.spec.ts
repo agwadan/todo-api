@@ -1,23 +1,31 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
+import { Test, TestingModule } from '@nestjs/testing';
+import { TodoService } from './todo.service';
+import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Todo } from './todo.entity';
 
-@Injectable()
-export class TodoService {
-  constructor(
-    @InjectRepository(Todo)
-    private todoRepository: Repository<Todo>,
-  ) {}
+describe('TodoService', () => {
+  let service: TodoService;
+  let repository: Repository<Todo>;
 
-  create(todoData: Partial<Todo>): Promise<Todo> {
-    const newTodo = this.todoRepository.create(todoData);
-    return this.todoRepository.save(newTodo);
-  }
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [
+        TodoService,
+        {
+          provide: getRepositoryToken(Todo),
+          useClass: Repository, // Mock repository
+        },
+      ],
+    }).compile();
 
-  findAll(): Promise<Todo[]> {
-    return this.todoRepository.find();
-  }
+    service = module.get<TodoService>(TodoService);
+    repository = module.get<Repository<Todo>>(getRepositoryToken(Todo));
+  });
 
-  // Implement other CRUD methods (findOne, update, delete)
-}
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+
+  
+});
