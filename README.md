@@ -3,7 +3,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-This is a Todo API built with NestJS and TypeORM, designed to manage a simple Todo list. The API includes CRUD operations for managing Todo items, and it is fully documented with Swagger.
+This is a Todo API built with NestJS designed to manage a simple Todo list. The API includes CRUD operations for managing Todo items, and it is fully documented with Swagger.
 
 ## Features
 - Create, Read, Update, Delete (CRUD) operations for Todos.
@@ -34,7 +34,7 @@ Before running this project, ensure that you have the following installed:
    DB_DATABASE=todo_db
    ```
 6. Ensure that the database (todo_db) exists in MySQL or create it.
-7. run the application using the command `npm run start` for npm or `yarn start` if you're using yarn as our package manager.
+7. Run the application using the command `npm run start` for npm or `yarn start` if you're using yarn as our package manager.
 
 8. The app will be running at `http://localhost:3000`.
 
