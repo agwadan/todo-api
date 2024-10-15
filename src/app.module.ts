@@ -7,15 +7,15 @@ import { TodoModule } from './todo/todo.module';
 
 @Module({
   imports: [
-    // Load environment variables
+    //==== Load environment variables =====
     ConfigModule.forRoot({
-      isGlobal: true, // Makes the configuration globally available in the app
+      isGlobal: true,
     }),
 
-    // TypeORM configuration using environment variables
+    
     TypeOrmModule.forRootAsync({
-      imports: [ConfigModule], // Import ConfigModule to access env variables
-      inject: [ConfigService], // Inject ConfigService to read env variables
+      imports: [ConfigModule], //--------------------------- Import ConfigModule to access env variables
+      inject: [ConfigService], //--------------------------- Inject ConfigService to read env variables
       useFactory: (configService: ConfigService) => ({
         type: 'mysql',
         host: configService.get<string>('DB_HOST'),
@@ -24,7 +24,7 @@ import { TodoModule } from './todo/todo.module';
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE'),
         autoLoadEntities: true,
-        synchronize: true, // Keep it true only in development, set to false in production
+        synchronize: true, //-------------------------------- Keep it true only in development, set to false in production
       }),
     }),
 

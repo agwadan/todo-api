@@ -39,10 +39,12 @@ export class TodoService {
   }
 
   /* ==== Delete todo logic ==== */
-  async remove(id: number): Promise<void> {
+  async remove(id: number): Promise<{message: string}> {
     const result = await this.todoRepository.delete(id);
     if (result.affected === 0) {
       throw new NotFoundException(`Todo with ID ${id} not found`); //---- Responds with 404 not found
     }
+
+    return { message: `Todo with ID ${id} successfully deleted` };
   }
 }
