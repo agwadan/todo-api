@@ -67,6 +67,43 @@ Run the command `npm run test` or `yarn test` if you are using yarn as your pack
 ## API Documentation
 The API is documented using Swagger. Once the app is running, you can access the Swagger UI at; `http://localhost:3000/api/docs`
 
+## Screenshots
+1. Adding a task
+
+|Request|Response|
+|-|-|
+|![image](https://github.com/user-attachments/assets/64fd416e-5156-4062-b0fe-12f021d2eb32)|![image](https://github.com/user-attachments/assets/711af8ee-e848-472f-9d9b-d729929e7b76)|
+
+2. Get all todos
+ 
+|Request|Response|
+|-|-|
+|![image](https://github.com/user-attachments/assets/ffdf29d7-d663-456c-8c88-0a188e5da6c1)|![image](https://github.com/user-attachments/assets/717deb85-f5c3-4e92-897d-6fe209ff8f01)|
+
+3. Get todo by ID
+
+|Request|Response|
+|-|-|
+|![image](https://github.com/user-attachments/assets/702b359f-4b14-4789-9616-fc8efef0139e)|![image](https://github.com/user-attachments/assets/9756235e-6a8e-4dca-8d3a-ecc4138c1746)|
+
+4. Update todo
+
+|Request|Response|
+|-|-|
+|![image](https://github.com/user-attachments/assets/2d94ff4d-9ba8-406b-8ac1-6797e75e7dea)|![image](https://github.com/user-attachments/assets/60c4ac11-139d-47e9-afb8-ed206d7c1449)|
+
+5. Delete todo
+
+|Request|Response|
+|-|-|
+|![image](https://github.com/user-attachments/assets/6f49dd04-b98c-4365-b11e-119b4449dfd9)|![image](https://github.com/user-attachments/assets/a9c82e1d-3fcb-44f4-b342-05f96df7a113)|
+
+
+
+
+
+
+
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
