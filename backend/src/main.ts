@@ -18,6 +18,7 @@ async function bootstrap() {
 
   //=== Pipe for validating req bodies against DTO objects ====
   app.useGlobalPipes(new ValidationPipe()); 
+  app.enableCors();
   await app.listen(3000);
 }
 bootstrap();
