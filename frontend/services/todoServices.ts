@@ -1,26 +1,16 @@
 import axios from "axios";
-
-export interface Todo {
-  id: number;
-  title: string;
-  description: string;
-  isCompleted: boolean;
-
-}
+import { Todo } from "../types/todo";
 
 const BASE_URL = 'http://192.168.100.39:3000/todos';
 
 /* ==== Add New Todo ==== */
-export const addTodo = async (data: any) => {
+export const addTodo = async (todo: any) => {
   try {
-    const response = await axios.post(`${BASE_URL}`, data);
-    console.log('====================================');
-    console.log(response);
-    console.log('====================================');
+    const response = await axios.post(`${BASE_URL}`, todo);
+    return response;
   } catch (error) {
-    console.log('====================================');
+    console.log("Add todo Error: ");
     console.log(error);
-    console.log('====================================');
   }
 }
 
@@ -36,6 +26,11 @@ export const getTodos = async () => {
     console.log(error);
     console.log('====================================');
   }
+}
+
+/* ==== Update a Todo ==== */
+export const updateTodos = async (data: any) => {
+  await axios.put(`${BASE_URL}/${data.id}`, data);
 }
 
 /* ==== Delete a Todo ==== */
